@@ -1,3 +1,6 @@
+## Name: Renick Fabian Rajesh
+## Reg No: 212224230227
+
 # EX-NO-10-Diffie-Hellman-Key-Exchange-Algorithm
 
 ## AIM:
@@ -19,10 +22,42 @@ To Implement Diffie Hellman Key Exchange Algorithm
 5. Security: The difficulty of computing discrete logarithms ensures that the shared key remains secure even if public values are intercepted.
 
 ## Program:
-
+```
+#include <math.h> 
+#include <stdio.h>
+long long int power(long long int a, long long int b, long long int P)
+{
+if (b == 1) 
+return a;
+else
+return (((long long int)pow(a, b)) % P);
+}
+int main()
+{
+long long int P, G, x, a, y, b, ka, kb;
+printf("\n**Diffie-Hellman Key Exchange algorithm\n\n"); 
+printf("\n\nEnter the value of P: ");
+scanf("%lld",&P); 
+printf("The value of P: %lld\n", P);
+printf("Enter the value of G (Primitive root of P): "); 
+scanf("%lld",&G);
+printf("The value of G: %lld\n\n", G);
+printf("The private key a for Renick : %lld\n", a); 
+x = power(G, a, P); 
+b = 3; 
+printf("The private key b for Renick : %lld\n\n", b); 
+y = power(G, b, P);
+ka = power(y, a, P); 
+kb = power(x, b, P); 
+printf("Secret key for the Renick is : %lld\n", ka); 
+printf("Secret Key for the Rajesh is : %lld\n", kb);
+return 0;
+}
+```
 
 
 ## Output:
+<img width="1748" height="899" alt="Screenshot 2026-01-30 094403" src="https://github.com/user-attachments/assets/6cb7e118-ee3e-4757-9dac-f42e09ac058f" />
 
 
 
